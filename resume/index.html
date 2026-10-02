@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connor Day: Resume</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header>
+    <div class="masthead">
+      <p class="site-name"><a href="../index.html">Connor Day</a></p>
+      <nav>
+        <a href="../index.html">Home</a>
+        <a href="../projects/index.html">Projects</a>
+        <a href="index.html" aria-current="page">Resume</a>
+        <a href="../contact/index.html">Contact</a>
+        <a href="https://github.com/dayconnor" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h1>Resume</h1>
+    <ul class="links">
+      <li><a href="mailto:contact@connor.day">contact@connor.day</a></li>
+      <li><a href="https://linkedin.com/in/con-day" target="_blank" rel="noopener noreferrer">linkedin.com/in/con-day</a></li>
+      <li><a href="https://github.com/dayconnor" target="_blank" rel="noopener noreferrer">github.com/dayconnor</a></li>
+      <li><a href="https://connor.day" target="_blank" rel="noopener noreferrer">connor.day</a></li>
+    </ul>
+
+    <section>
+      <h2>Education</h2>
+      <article>
+        <header>
+          <div class="entry-head">
+            <h3>University of California, San Diego</h3>
+            <span>San Diego, CA</span>
+          </div>
+          <div class="entry-head">
+            <em>Bachelor of Science in Data Science</em>
+            <em><time datetime="2025-09">Sep. 2025</time> &ndash; Present</em>
+          </div>
+        </header>
+        <ul>
+          <li><strong>Relevant Coursework:</strong> Practice and Application of Data Science, Systems for Scalable Analytics, Recommender Systems and Web Mining, Introduction to Data Visualization, Introduction to Data Management, Exploratory Data Analysis and Inference, Introduction to Probability, Theoretical Foundations of Data Science I &amp; II, Algorithms for Data Science, Programming and Data Structures, Principles of Data Science</li>
+        </ul>
+      </article>
+    </section>
+
+    <section>
+      <h2>Projects</h2>
+      <article>
+        <header class="entry-head">
+          <h3><a href="https://github.com/dayconnor/outfit-visual-search" target="_blank" rel="noopener noreferrer">Outfit Visual Search</a></h3>
+          <span><time datetime="2026-09">Sep. 2026</time> &ndash; Present</span>
+        </header>
+        <p><em>Python, PyTorch, Hugging Face Transformers, FAISS, Pandas, NumPy</em></p>
+        <ul>
+          <li>Building a text-to-image search engine over 45,622 Fashionpedia garment photos that returns images matching natural-language queries like &ldquo;oversized blazer,&rdquo; with optional garment category and attribute filters</li>
+          <li>Embedded the full corpus with FashionCLIP and a zero-shot OpenAI CLIP ViT-B/32 baseline, indexing both with FAISS exact cosine-similarity search to test whether a fashion-specific model beats a general-purpose one</li>
+          <li>Wrote a reproducible, numbered pipeline that parses COCO-format annotations into 333K garment instances and 761K attribute labels</li>
+          <li>Pre-registered the evaluation before any modeling: 20 test queries across four difficulty tiers, written relevance criteria, recall@k and precision@10 metrics, and failure modes predicted in advance</li>
+        </ul>
+      </article>
+      <article>
+        <header class="entry-head">
+          <h3><a href="https://connor.day/projects/bioenergetics" target="_blank" rel="noopener noreferrer">Project Bioenergetics</a></h3>
+          <time datetime="2026-08">Aug. 2026</time>
+        </header>
+        <p><em>Python, Pandas, Polars, statsmodels, scikit-learn, Matplotlib</em></p>
+        <ul>
+          <li>Pre-registered four falsifiable hypotheses linking thyroid function to metabolic health, then tested them on three pooled NHANES cycles (2007&ndash;2012) covering up to 7,800 U.S. adults</li>
+          <li>Fit survey-weighted regression models using NHANES strata, PSUs, and sample weights, adjusting for age, sex, and BMI, and built a metabolic syndrome flag from the 2009 Harmonized clinical criteria</li>
+          <li>Applied FDR and Bonferroni correction across all hypotheses: three of four were unsupported, and the one significant result ran opposite to the prediction (+14.9 mg/dL triglycerides per unit FT3/FT4 ratio, <i>p</i> &lt; 0.001), holding under BMI adjustment and a total-hormone sensitivity check</li>
+          <li>Built a reproducible pipeline from raw NHANES files to per-hypothesis analytic samples and published the findings as a write-up with colorblind-safe figures at connor.day</li>
+        </ul>
+      </article>
+    </section>
+
+    <section>
+      <h2>Experience</h2>
+      <article>
+        <header>
+          <div class="entry-head">
+            <h3>Polo Ralph Lauren Factory Store</h3>
+            <span>Livermore, CA</span>
+          </div>
+          <div class="entry-head">
+            <em>Front &amp; Back of House Team Member</em>
+            <em><time datetime="2022-06">June 2022</time> &ndash; <time datetime="2025-09">Sep. 2025</time></em>
+          </div>
+        </header>
+        <ul>
+          <li>Selected by management to collaborate with top-performing team members on styling store sections for corporate lookbook photography, adopted company-wide as the seasonal floor standard for all Ralph Lauren factory stores</li>
+          <li>Trained 10+ new team members on store procedures, POS operations, and customer service standards, explaining processes clearly to people with no prior retail experience</li>
+          <li>Communicated with clients in person, by text, and over Zoom while coordinating with a large team through high-volume periods, including a Black Friday weekend that passed $1 million in sales in three days</li>
+        </ul>
+      </article>
+    </section>
+
+    <section>
+      <h2>Technical Skills</h2>
+      <dl class="skills">
+        <dt>Languages</dt>
+        <dd>Python, SQL, Java, R, C++</dd>
+        <dt>Libraries</dt>
+        <dd>Pandas, NumPy, Polars, statsmodels, scikit-learn, PyTorch, Hugging Face Transformers, FAISS, Plotly, Matplotlib, Seaborn</dd>
+        <dt>Data Skills</dt>
+        <dd>Exploratory data analysis, survey-weighted regression, hypothesis testing, multiple-comparison correction, permutation testing, data visualization</dd>
+        <dt>Tools</dt>
+        <dd>Git, GitHub, Claude Code, LaTeX, Jupyter Notebooks, Markdown</dd>
+      </dl>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-links">
+      <a href="https://github.com/dayconnor" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="https://linkedin.com/in/con-day" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    </div>
+  </footer>
+</body>
+</html>
