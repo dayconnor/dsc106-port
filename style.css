@@ -1,7 +1,12 @@
 /* Step 2.4: accent color, available to the whole document */
 :root {
-  --color-accent: oklch(40% 0.14 15); /* burgundy */
-  --color-border: oklch(80% 3% 200);
+  /* Lab 3 Step 4.1: follow the OS theme; the switcher overrides this */
+  color-scheme: light dark;
+
+  /* burgundy, lightened in dark mode so it stays readable */
+  --color-accent: light-dark(oklch(40% 0.14 15), oklch(72% 0.12 15));
+  /* Lab 3 Step 4.2: semi-transparent so it works on light and dark */
+  --color-border: oklch(50% 10% 200 / 40%);
   accent-color: var(--color-accent);
 }
 
@@ -39,7 +44,19 @@ figure {
 figcaption {
   margin-top: 0.5em;
   font-size: 0.875em;
-  color: oklch(50% 0 0);
+  color: light-dark(oklch(50% 0 0), oklch(70% 0 0));
+}
+
+/* Lab 3 Step 4.3: theme switcher in the top right corner */
+.color-scheme {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 80%;
+
+  select {
+    font: inherit;
+  }
 }
 
 /* Step 2: navigation bar */
@@ -48,12 +65,6 @@ nav {
   font-size: 0.85em;
   margin-bottom: 1em;
   border-bottom: 1px solid var(--color-border);
-
-  /* Step 2.1: let the links act as direct flex children */
-  ul,
-  li {
-    display: contents;
-  }
 
   a {
     flex: 1;
@@ -71,7 +82,8 @@ nav {
     &:hover {
       border-bottom: 0.4em solid var(--color-accent);
       padding-bottom: 0.1em;
-      background-color: oklch(from var(--color-accent) 95% 5% h);
+      /* Lab 3 Step 4.2: tint toward the page background in either theme */
+      background-color: color-mix(in oklch, var(--color-accent), canvas 85%);
     }
   }
 }
@@ -156,7 +168,7 @@ form {
 
   article p {
     margin: 0.25em 0;
-    color: oklch(45% 0 0);
+    color: light-dark(oklch(45% 0 0), oklch(75% 0 0));
   }
 
   article ul {
