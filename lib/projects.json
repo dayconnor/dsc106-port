@@ -1,0 +1,74 @@
+[
+  {
+    "title": "Persuasive or Deceptive Visualization?",
+    "year": 2026,
+    "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+    "description": "DSC 106 Project 2, with Ethan Dam and Sophie Xie. Using 33,358 NYPD misconduct allegations from ProPublica's CCRB release, we argue both for and against the claim that male officers face more consequences than female officers: men average more substantiated complaints and harsher recommended punishments, yet are promoted more often even after the harshest one. Oct 2026. <a href=\"https://sop-xie.github.io/dsc106-proj2/\" target=\"_blank\" rel=\"noopener noreferrer\">Write-up</a>"
+  },
+  {
+    "title": "Whole vs. Processed Foods",
+    "year": 2026,
+    "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+    "description": "DSC 106 Project 1. An expository visualization of GroceryDB comparing the price and macros of whole and processed foods. Oct 2026."
+  },
+  {
+    "title": "Outfit Visual Search",
+    "year": 2026,
+    "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+    "description": "Text-to-image search over Fashionpedia garment photos using FashionCLIP and FAISS. In progress, Sep 2026. <a href=\"https://github.com/dayconnor/outfit-visual-search\" target=\"_blank\" rel=\"noopener noreferrer\">Code</a>"
+  },
+  {
+    "title": "Project Bioenergetics",
+    "year": 2026,
+    "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+    "description": "A survey-weighted analysis of NHANES thyroid panels testing Ray Peat's bioenergetic hypotheses. Three of four pre-registered predictions failed, and the one significant result ran backwards. Aug 2026. <a href=\"https://connor.day/projects/bioenergetics\" target=\"_blank\" rel=\"noopener noreferrer\">Write-up</a> <a href=\"https://github.com/dayconnor/nhanes-bioenergetics\" target=\"_blank\" rel=\"noopener noreferrer\">Code</a>"
+  },
+  {
+    "title": "Power Outages and Population Density",
+    "year": 2026,
+    "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+    "description": "Do higher-density states recover from power outages faster? A permutation-tested EDA and a Random Forest outage-duration model on 16 years of U.S. outage data show that it may not be significant. Jun 2026. <a href=\"https://connor.day/projects/power-outages\" target=\"_blank\" rel=\"noopener noreferrer\">Write-up</a> <a href=\"https://github.com/dayconnor/power-outages-population-density\" target=\"_blank\" rel=\"noopener noreferrer\">Code</a>"
+  },
+  {
+    "title": "Lorem ipsum dolor sit.",
+    "year": 2025,
+    "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dolor quos, quod assumenda explicabo odio, nobis ipsa laudantium quas eum veritatis ullam sint porro minima modi molestias doloribus cumque odit."
+  },
+  {
+    "title": "Architecto minima sed omnis?",
+    "year": 2025,
+    "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+    "description": "Est, reiciendis aspernatur debitis maxime et itaque animi sit quod quo, tempore incidunt tempora dignissimos exercitationem enim numquam quam quaerat optio laborum ut unde hic delectus laboriosam? Quasi, cupiditate corporis."
+  },
+  {
+    "title": "Asperiores rem repellendus doloremque.",
+    "year": 2024,
+    "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+    "description": "Eligendi tenetur quae quos recusandae est. Cumque, voluptatem. Quo nihil dignissimos molestiae explicabo praesentium aspernatur debitis, illo rerum possimus quam ducimus earum nulla officiis maiores itaque repellat corporis soluta labore?"
+  },
+  {
+    "title": "Laudantium reprehenderit placeat perspiciatis.",
+    "year": 2024,
+    "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+    "description": "Quo minus perferendis nulla corrupti, molestias incidunt ipsam voluptates quaerat reprehenderit ea, deserunt fuga a nemo."
+  },
+  {
+    "title": "Consequuntur autem eos facere.",
+    "year": 2024,
+    "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+    "description": "Laborum alias ea unde harum aspernatur? Totam, voluptatum quidem rerum ab cumque sint laudantium consequatur numquam inventore similique, quis aut fugit esse."
+  },
+  {
+    "title": "Quos sint quaerat omnis?",
+    "year": 2023,
+    "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+    "description": "Est neque, velit nam rerum error odio voluptates voluptatem magnam laboriosam ad? Doloribus, id et itaque unde porro."
+  },
+  {
+    "title": "Nesciunt voluptas tempora iure.",
+    "year": 2022,
+    "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+    "description": "Sapiente dolorum reiciendis, voluptas iste eligendi illum odit assumenda accusantium veritatis similique."
+  }
+]

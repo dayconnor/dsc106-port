@@ -123,7 +123,9 @@ form {
     grid-row: span 3;
   }
 
-  h2 {
+  /* Lab 4: titles are h2 on the Projects page, h3 on the home page */
+  h2,
+  h3 {
     margin: 0;
     font-size: 1.1em;
   }
@@ -134,6 +136,26 @@ form {
 
   p {
     margin: 0;
+  }
+}
+
+/* Lab 4 Step 3: GitHub stats, labels on row 1 and numbers on row 2 */
+#profile-stats dl {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 0;
+  text-align: center;
+
+  dt {
+    grid-row: 1;
+    font-size: 0.85em;
+    color: light-dark(oklch(45% 0 0), oklch(75% 0 0));
+  }
+
+  dd {
+    grid-row: 2;
+    margin: 0;
+    font-size: 1.75em;
   }
 }
 
