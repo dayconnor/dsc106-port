@@ -125,8 +125,9 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
   // Clear first so re-rendering doesn't duplicate articles
   containerElement.innerHTML = '';
 
+  // Lab 5: also reached when a search or year filter matches nothing
   if (!Array.isArray(projects) || projects.length === 0) {
-    containerElement.innerHTML = '<p>No projects to show yet.</p>';
+    containerElement.innerHTML = '<p>No projects to show.</p>';
     return;
   }
 
@@ -134,10 +135,15 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
     const article = document.createElement('article');
     const image = project.image ?? 'https://dsc106.com/labs/lab02/images/empty.svg';
 
+    // Lab 5 Step 0.1: description and year share one div, so the card
+    // keeps its three subgrid rows (title, image, text)
     article.innerHTML = `
       <${headingLevel}>${project.title ?? 'Untitled project'}</${headingLevel}>
       <img src="${image}" alt="">
-      <p>${project.description ?? ''}</p>
+      <div>
+        <p>${project.description ?? ''}</p>
+        <p class="project-year">${project.year ?? ''}</p>
+      </div>
     `;
 
     containerElement.appendChild(article);
