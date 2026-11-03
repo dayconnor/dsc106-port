@@ -221,10 +221,15 @@ form {
   font: inherit;
 }
 
-/* Lab 4 Step 3: GitHub stats, labels on row 1 and numbers on row 2 */
-#profile-stats dl {
+/* Lab 4 Step 3: GitHub stats, labels on row 1 and numbers on row 2.
+   Lab 6 Step 1.3: the meta page's .stats lists reuse it, so columns
+   follow the item count instead of a fixed 4 */
+#profile-stats dl,
+dl.stats {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-auto-columns: 1fr;
+  grid-auto-flow: column;
+  gap: 0 1em;
   margin: 0;
   text-align: center;
 
@@ -239,6 +244,99 @@ form {
     margin: 0;
     font-size: 1.75em;
   }
+}
+
+/* Lab 6 Step 1.3: stats like "Longest file" carry a name, so smaller text
+   keeps the row from overflowing */
+#stats dd {
+  font-size: 1.25em;
+
+  small {
+    display: block;
+    font-size: 0.6em;
+    color: light-dark(oklch(45% 0 0), oklch(75% 0 0));
+  }
+}
+
+/* Step 2.3: faint gridlines, so they guide the eye without competing */
+.gridlines {
+  .tick line {
+    stroke: var(--color-border);
+    stroke-opacity: 0.5;
+  }
+
+  .domain {
+    display: none;
+  }
+}
+
+/* Step 3.1: dots grow from their centers on hover */
+#chart circle {
+  transition: 200ms;
+  transform-origin: center;
+  transform-box: fill-box;
+
+  &:hover {
+    transform: scale(1.5);
+  }
+
+  /* Step 5.4: brushed dots in the site accent */
+  &.selected {
+    fill: var(--color-accent);
+  }
+}
+
+/* Step 3.1–3.3: labels in column 1, values in column 2; fades out via
+   [hidden], but stays while hovered so the commit link can be clicked */
+dl.info {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.25em 1em;
+  margin: 0;
+  transition-duration: 500ms;
+  transition-property: opacity, visibility;
+
+  dt {
+    color: light-dark(oklch(45% 0 0), oklch(75% 0 0));
+  }
+
+  dd {
+    margin: 0;
+  }
+
+  &[hidden]:not(:hover, :focus-within) {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+/* Step 3.2: raised card that follows the theme */
+.tooltip {
+  position: fixed;
+  top: 1em;
+  left: 1em;
+  padding: 0.75em 1em;
+  font-size: 0.85em;
+  background-color: color-mix(in oklch, canvas 92%, transparent);
+  backdrop-filter: blur(6px);
+  border: 1px solid var(--color-border);
+  border-radius: 0.5em;
+  box-shadow: 0 0.25em 0.75em oklch(0% 0 0 / 20%);
+}
+
+/* Step 5.3: dashed "marching ants" outline on the brush */
+@keyframes marching-ants {
+  to {
+    stroke-dashoffset: -8; /* 5 + 3 */
+  }
+}
+
+#chart .selection {
+  fill-opacity: 0.1;
+  stroke: currentColor;
+  stroke-opacity: 0.7;
+  stroke-dasharray: 5 3;
+  animation: marching-ants 2s linear infinite;
 }
 
 /* Step 5: resume */
