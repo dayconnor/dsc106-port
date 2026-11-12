@@ -134,7 +134,17 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
 
   for (let project of projects) {
     const article = document.createElement('article');
-    const image = project.image ?? 'https://dsc106.com/labs/lab02/images/empty.svg';
+    let image = project.image ?? 'https://dsc106.com/labs/lab02/images/empty.svg';
+    // Local screenshots are stored relative to the site root, so prefix them
+    // to load from both the home page and projects/
+    if (!image.startsWith('http')) {
+      image = BASE_PATH + image;
+    }
+
+    // Lab 7 Step 7: link only the projects that have a url field
+    const link = project.url
+      ? `<p><a href="${project.url}" target="_blank" rel="noopener noreferrer">View project</a></p>`
+      : '';
 
     // Lab 5 Step 0.1: description and year share one div, so the card
     // keeps its three subgrid rows (title, image, text)
@@ -143,6 +153,7 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
       <img src="${image}" alt="">
       <div>
         <p>${project.description ?? ''}</p>
+        ${link}
         <p class="project-year">${project.year ?? ''}</p>
       </div>
     `;

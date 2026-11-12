@@ -1,5 +1,12 @@
 [
   {
+    "title": "Bikewatching",
+    "year": 2026,
+    "image": "images/bikewatching.png",
+    "url": "https://dayconnor.github.io/bikewatching/",
+    "description": "DSC 106 Lab 7. An interactive Mapbox map of Bluebikes traffic in Boston and Cambridge, March 2024: circle size shows trips per station, color shows whether riders mostly depart or arrive, and a slider filters trips by time of day. Nov 2026."
+  },
+  {
     "title": "Persuasive or Deceptive Visualization?",
     "year": 2026,
     "image": "https://dsc106.com/labs/lab02/images/empty.svg",
