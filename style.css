@@ -270,11 +270,17 @@ dl.stats {
   }
 }
 
-/* Step 3.1: dots grow from their centers on hover */
+/* Step 3.1: dots grow from their centers on hover.
+   Lab 8 Step 1.4: new dots grow in from r = 0, bigger ones more slowly
+   (--r is the radius, set per dot in main.js) */
 #chart circle {
-  transition: 200ms;
+  transition: all 200ms, r calc(var(--r) * 100ms);
   transform-origin: center;
   transform-box: fill-box;
+
+  @starting-style {
+    r: 0;
+  }
 
   &:hover {
     transform: scale(1.5);
@@ -337,6 +343,110 @@ dl.info {
   stroke-opacity: 0.7;
   stroke-dasharray: 5 3;
   animation: marching-ants 2s linear infinite;
+}
+
+/* Lab 8 Step 4: which moment the sticky plots show (replaced the slider) */
+.as-of {
+  margin: 0 0 0.5em;
+  font-size: 0.9em;
+  color: light-dark(oklch(45% 0 0), oklch(75% 0 0));
+
+  time {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Lab 8 Step 2.1: file names in column 1, line dots in column 2; each
+   row is a subgrid so every file lines up on the same columns.
+   Step 4: names column sized to the longest name, since the list now
+   shares the row with its story */
+#files {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.5em 1em;
+
+  > div {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: subgrid;
+  }
+
+  dt {
+    grid-column: 1;
+
+    /* Step 2.2: line count under the name, quieter */
+    small {
+      display: block;
+      font-size: 0.75em;
+      opacity: 0.7;
+    }
+  }
+
+  /* Step 2.2: dots wrap like text */
+  dd {
+    grid-column: 2;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: start;
+    align-content: start;
+    gap: 0.15em;
+    padding-top: 0.6em;
+    margin-left: 0;
+  }
+}
+
+/* Lab 8 Step 2.2–2.4: one dot per line, colored by the file's technology */
+.loc {
+  display: flex;
+  width: 0.5em;
+  aspect-ratio: 1;
+  background: var(--color);
+  border-radius: 50%;
+}
+
+/* Lab 8 Step 3.1: story and plot share the row; the plot sticks while
+   the story scrolls past (sticky needs the fixed height).
+   Step 4: same layout for the file list */
+#scrolly-1,
+#scrolly-2 {
+  position: relative;
+  display: flex;
+  gap: 1rem;
+
+  > * {
+    flex: 1;
+  }
+}
+
+#scatter-story,
+#files-story {
+  position: relative;
+}
+
+#scatter-plot {
+  position: sticky;
+  top: 0;
+  left: 0;
+  bottom: auto;
+  height: 50vh;
+}
+
+/* Step 4: the file list's height changes as files appear, so it sticks
+   at its own height (align-self: start) instead of a fixed one. It gets
+   two thirds of the row and smaller text so all files fit on screen */
+#scrolly-2 > #files-plot {
+  position: sticky;
+  top: 0;
+  align-self: start;
+  flex: 2;
+  font-size: 0.75em;
+}
+
+/* Lab 8 Step 3.2: room between commits, so each one gets its own stretch
+   of scrolling before the next takes over */
+#scatter-story .step,
+#files-story .step {
+  padding-bottom: 40vh;
 }
 
 /* Step 5: resume */
